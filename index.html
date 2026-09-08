@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Zone - عالم الألعاب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎮 Games Zone</div>
+        <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="ابحث عن لعبتك...">
+    </header>
+
+    <main class="container">
+        
+        <!-- قسم الألعاب القتالية -->
+        <section class="category-section">
+            <h2>⚔️ ألعاب القتال والأكشن</h2>
+            <div class="games-grid">
+                <a href="play.html?url=https://play.gamepix.com/stickman-fighter-epic-battle/embed&title=Stickman+Fighter" class="game-card">
+                    <img src="https://img.gamepix.com/games/stickman-fighter-epic-battle/icon/stickman-fighter-epic-battle.png" alt="قتال العصي">
+                    <h3>قتال العصي الملحمي</h3>
+                </a>
+                <a href="play.html?url=https://play.gamepix.com/brawlhero/embed&title=Brawl+Hero" class="game-card">
+                    <img src="https://img.gamepix.com/games/brawlhero/icon/brawlhero.png" alt="بطل القتال">
+                    <h3>بطل القتال (Brawl Hero)</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- قسم ألعاب السيارات والسرعة -->
+        <section class="category-section">
+            <h2>🏎️ ألعاب السيارات والسرعة</h2>
+            <div class="games-grid">
+                <a href="play.html?url=https://play.gamepix.com/moto-x3m/embed&title=Moto+X3M" class="game-card">
+                    <img src="https://img.gamepix.com/games/moto-x3m/icon/moto-x3m.png" alt="سباق الدراجات">
+                    <h3>سباق الدراجات Moto X3M</h3>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function searchGames() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('game-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                cards[i].style.display = title.includes(input) ? "block" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
 
